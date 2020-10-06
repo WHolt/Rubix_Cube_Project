@@ -29,7 +29,7 @@ class createTest(unittest.TestCase):
     
     def test100_040_ExtraneousParms(self):
         expectedResult = {'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289', 'status':'ok'}
-        parms = {'op': 'create', 'f', '123456'}
+        parms = {'op': 'create', 'f' : '123456'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)    
     
