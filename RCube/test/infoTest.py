@@ -16,3 +16,9 @@ class Test(unittest.TestCase):
         actualResult = info._info(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
+    def test100_020_ShouldReturnMyUserNameWithExtraParms(self):
+        expectedResult = {'user' : 'cwh0023'}
+        parms = {'op': 'info', 'op':'create'}
+        actualResult = info._info(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+        
