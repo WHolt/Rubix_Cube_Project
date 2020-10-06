@@ -1,12 +1,12 @@
 '''
 Created on Oct 6, 2020
 
-@author: capta
+@author: Cameron Holt
 '''
 import unittest
 import RCube.create as create
 
-class Test(unittest.TestCase):
+class createTest(unittest.TestCase):
 #Happy path
     def test100_010_NominalValueOfFaces(self):
         expectedResult = {'cube': '111111111222222222333333333444444444555555555666666666', 

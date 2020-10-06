@@ -1,13 +1,13 @@
 '''
 Created on Oct 6, 2020
 
-@author: capta
+@author: Cameron Holt
 '''
 import unittest
 import RCube.info as info
 
 
-class Test(unittest.TestCase):
+class infoTest(unittest.TestCase):
 
 
     def test100_010_ShouldReturnMyUserName(self):
