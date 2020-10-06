@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
 
 
     def test100_010_ShouldReturnMyUserName(self):
-        expectedResult = {'user' : cwh0023}
+        expectedResult = {'user' : 'cwh0023'}
         parms = {'op': 'info'}
         actualResult = info._info(parms)
         self.assertDictEqual(expectedResult, actualResult)
