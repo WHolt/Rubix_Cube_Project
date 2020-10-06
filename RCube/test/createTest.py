@@ -37,7 +37,7 @@ class createTest(unittest.TestCase):
     #Sad Path 900
     
     def test900_010_IncorrectLengthForFaces(self):
-        expectedResult = {'status': 'error': }
+        expectedResult = {'status': 'error'}
         parms = {'op': 'create', 'faces' : '1234567'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult) 
