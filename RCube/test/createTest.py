@@ -41,13 +41,13 @@ class createTest(unittest.TestCase):
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult) 
         
-    def test900_010_DuplicateItemInFaces(self):
+    def test900_020_DuplicateItemInFaces(self):
         expectedResult = {'status': 'error: Duplicate Faces'}
         parms = {'op': 'create', 'faces' : '123455'}
         actualResult = create._create(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
-    def test900_010_TooFewItemsInFaces(self):
+    def test900_030_TooFewItemsInFaces(self):
         expectedResult = {'status': 'error: Incorrect length for faces'}
         parms = {'op': 'create', 'faces' : '12345'}
         actualResult = create._create(parms)

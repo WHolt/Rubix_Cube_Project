@@ -1,7 +1,8 @@
 import hashlib
-
 def _create(parms):
-    result = {}
+    result = {'cube': '',
+              'integrity': '',
+              'status': ''}
     try:
         if (parms['faces'] == '' or parms['faces'] == None):
             cube = 'gybwro'
@@ -17,5 +18,7 @@ def _create(parms):
                 return {'status': 'error: Duplicate Faces'}
         output += (face*9)
     bytestring = bytes(output, 'utf-8')
+    result['cube'] = output
     result['integrity'] = hashlib.sha256(bytestring).hexdigest().upper()
+    result['status'] = 'ok'
     return result
