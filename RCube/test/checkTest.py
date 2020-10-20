@@ -89,13 +89,13 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_965_NoIntegrityValue(self):
-        expectedResult = {'status': 'error: Wrong Integrity Value'}
+        expectedResult = {'status': 'error: No Integrity Value'}
         parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666666', 'integrity': ''}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
     def test100_970_NoIntegrityValue(self):
-        expectedResult = {'status': 'error: Wrong Integrity Value'}
+        expectedResult = {'status': 'error: No Integrity Key'}
         parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666666'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
