@@ -1,7 +1,7 @@
 '''
 Created on Oct 20, 2020
 
-@author: capta
+@author: Cameron Holt
 '''
 import unittest
 import RCube.check as check
@@ -75,13 +75,13 @@ class Test(unittest.TestCase):
         parms = {'op': 'check', 'cube' :'112111111522222222333333333444444444555555551666666666', 'integrity': '5572DDB8ED3FF835CFA36C776D8EC29CFD55F134046CFE0169AABD3AD4C4DE9B'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
-        
+         
     def test100_955_ImpossibleEdge(self):
         expectedResult = {'status': 'error: Impossible edge'}
         parms = {'op': 'check', 'cube' :'111112111222122222333333333444444444555555555666666666', 'integrity': '61E17B21DC3147541FD168E65EDFACD2E5B302646450329B5848D6343D55129D'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
-    
+#     
     def test100_960_DoesNotMatchIntegrityValue(self):
         expectedResult = {'status': 'error: Wrong Integrity Value'}
         parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666666', 'integrity': '88d897bd22e132d21a538745e63995b07d7c52ce9617a0979520545753ee0ded'}
@@ -99,5 +99,30 @@ class Test(unittest.TestCase):
         parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666666'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
+        
+#Corner Tests
+    def test200_200_CornerCheckValidation(self):
+        expectedResult = {'status': 'Corner exists'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
     
+    def test200_210_SlightlyShiftedCorners(self):
+        expectedResult = {'status': 'Corner exists'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
     
+ #Edge Tests
+    def test100_300_EdgeCheckValidation(self):
+        expectedResult = {'status': 'Edge exists'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+    
+    def test100_310_EdgeCheckShifted(self):
+        expectedResult = {'status': 'Edge exists'}
+        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        actualResult = check._check(parms)
+        self.assertDictEqual(expectedResult, actualResult)
+        
