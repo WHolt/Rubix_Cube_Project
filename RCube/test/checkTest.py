@@ -120,9 +120,9 @@ class Test(unittest.TestCase):
         actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
-    def test100_310_EdgeCheckShifted(self):
+    def test100_310_EdgeCheckInValid(self):
         expectedResult = {'status': 'Edge exists'}
-        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
         actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
