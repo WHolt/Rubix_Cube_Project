@@ -1,7 +1,7 @@
 import hashlib
 def _check(parms):
     result = {'status': ''}    
-    if(parms['cube'] == '' or 'cube' not in parms): 
+    if(('cube' not in parms) or (parms['cube'] == '')):
         result['status'] = 'error: No Cube'
         return result
     try:
