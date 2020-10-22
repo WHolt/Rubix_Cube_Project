@@ -66,7 +66,7 @@ class Test(unittest.TestCase):
     
     def test100_940_NoDistinctMiddle(self):
         expectedResult = {'status': 'error: Indistinct middle'}
-        parms = {'op': 'check', 'cube' :'111411111222222222333333333144444444555555555666666666', 'integrity': 'A76983334BA3061D574662C5329E509475845E980971BC0ED0B5288FE2757C31'}
+        parms = {'op': 'check', 'cube' :'111141111222222222333333333144444444555555555666666666', 'integrity': 'A76983334BA3061D574662C5329E509475845E980971BC0ED0B5288FE2757C31'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)    
     
