@@ -7,7 +7,7 @@ def _check(parms):
         if (not(len(parms['cube']) == 54)): result['status'] = 'error: Wrong number of faces'
     except:
         return result
-    else: 'status':''
+    else: result['status'] = ''
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
     cubeFaces = [parms['cube'][x:x+9] for x in range(0,len(parms['cube']),9)]
