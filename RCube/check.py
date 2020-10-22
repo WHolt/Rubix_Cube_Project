@@ -13,7 +13,7 @@ def _check(parms):
     return result
 
 def _checkCorner(parms):
-     corner = {'status':''}
+    corner = {'status':''}
 #     try:
 #     except:
 #         
