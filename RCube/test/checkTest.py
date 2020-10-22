@@ -60,7 +60,7 @@ class Test(unittest.TestCase):
     
     def test100_930_TooManyofOneColor(self):
         expectedResult = {'status': 'error: Incorrect number of colors'}
-        parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555111111111', 'integrity': 'FFFA07BE4BF1438C0C660DE9E9C0624640DC23856E875F6730F6195CEAF2AB61'}
+        parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666665', 'integrity': 'FFFA07BE4BF1438C0C660DE9E9C0624640DC23856E875F6730F6195CEAF2AB61'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
@@ -95,7 +95,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
         
     def test100_970_NoIntegrityValue(self):
-        expectedResult = {'status': 'error: No Integrity Key'}
+        expectedResult = {'status': 'error: No Integrity Value'}
         parms = {'op': 'check', 'cube' :'111111111222222222333333333444444444555555555666666666'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
@@ -108,7 +108,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     
     def test200_210_CornersInvalid(self):
-        expectedResult = {'status': 'Corner does not exist'}
+        expectedResult = {'status': 'Impossible corner'}
         parms = {'op': 'check', 'cube': 'gggygggggyyybyyyyybbgbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
         actualResult = check._checkCorner(parms)
         self.assertDictEqual(expectedResult, actualResult)
@@ -121,7 +121,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_310_EdgeCheckInValid(self):
-        expectedResult = {'status': 'Edge exists'}
+        expectedResult = {'status': 'Impossible edge'}
         parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
         actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
