@@ -25,13 +25,13 @@ def _check(parms):
 def _checkCorner(parms):
     isCorner = {'status':''}
     cube = parms['cube']
-    try:
-    except:
+    #try:
+   # except:
          
     return isCorner
 
 def _checkEdge(parms):
     isEdge = False 
-    try:
-    except:
+#    try:
+#    except:
     return isEdge
