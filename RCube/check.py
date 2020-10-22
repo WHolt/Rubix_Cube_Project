@@ -1,6 +1,7 @@
 import hashlib
 def _check(parms):
-    result = {'status': ''}    
+    result = {'status': ''}
+    #Validating that the cube can be worked on Tests    
     if(('cube' not in parms) or (parms['cube'] == '')):
         result['status'] = 'error: No Cube'
         return result
@@ -10,10 +11,12 @@ def _check(parms):
     if (not(len(parms['cube']) == 54)):
         result['status'] = 'error: Wrong number of faces'
         return result
+    #Actually validating what's going on with the cube
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
     cubeFaces = [parms['cube'][x:x+9] for x in range(0,len(parms['cube']),9)]
-    centerColors = ''
+    print(cubeFaces)
+    centerColors = ''    
     for face in cubeFaces:
         centerColors += face[4]
     for face in centerColors:
@@ -28,8 +31,7 @@ def _check(parms):
 def _checkCorner(parms):
     isCorner = {'status':''}
     cube = parms['cube']
-    #try:
-   # except:
+
          
     return isCorner
 
