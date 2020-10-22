@@ -4,19 +4,12 @@ def _check(parms):
     if(('cube' not in parms) or (parms['cube'] == '')):
         result['status'] = 'error: No Cube'
         return result
-    try:
-        if(parms['integrity'] == '' or 'integrity' not in parms): 
-            result['status'] = 'error: No Integrity Value'
-    except:
+    if('integrity' not in parms or parms['integrity'] == ''): 
         result['status'] = 'error: No Integrity Value'
         return result
-    try:
-        if (not(len(parms['cube']) == 54)): 
-            result['status'] = 'error: Wrong number of faces'
-    except:
+    if (not(len(parms['cube']) == 54)):
         result['status'] = 'error: Wrong number of faces'
         return result
-    else: result['status'] = ''
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
     cubeFaces = [parms['cube'][x:x+9] for x in range(0,len(parms['cube']),9)]
