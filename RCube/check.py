@@ -14,7 +14,7 @@ def _check(parms):
     for face in cubeFaces:
         result = 0
         
-    if (x is in centerColors): return {'status': 'error: Indistinct middle'}
+    #if (x is in centerColors): return {'status': 'error: Indistinct middle'}
     
     bytestring = bytes(parms['cube'], 'utf-8')
     integrity = hashlib.sha256(bytestring).hexdigest().upper()
