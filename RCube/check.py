@@ -1,18 +1,18 @@
 import hashlib
 def _check(parms):
-    result = {'status': ''}
-    try:
-        if(parms['cube'] == '' or 'cube' not in parms): result['status'] = 'error: No Cube'
-    except:
+    result = {'status': ''}    
+    if(parms['cube'] == '' or 'cube' not in parms): 
         result['status'] = 'error: No Cube'
         return result
     try:
-        if(parms['integrity'] == '' or 'integrity' not in parms): result['status'] = 'error: No Integrity Value'
+        if(parms['integrity'] == '' or 'integrity' not in parms): 
+            result['status'] = 'error: No Integrity Value'
     except:
         result['status'] = 'error: No Integrity Value'
         return result
     try:
-        if (not(len(parms['cube']) == 54)): result['status'] = 'error: Wrong number of faces'
+        if (not(len(parms['cube']) == 54)): 
+            result['status'] = 'error: Wrong number of faces'
     except:
         result['status'] = 'error: Wrong number of faces'
         return result
