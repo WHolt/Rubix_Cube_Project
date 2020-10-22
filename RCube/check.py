@@ -12,9 +12,9 @@ def _check(parms):
     cubeFaces = [parms['cube'][x:x+9] for x in range(0,len(parms['cube']),9)]
     centerColors = ''
     for face in cubeFaces:
-        result = 0
-        
-    #if (x is in centerColors): return {'status': 'error: Indistinct middle'}
+        centerColors += face[5]
+    for face in centerColors:
+        if(centerColors.count(face) > 1): return {'status': 'error: Indistinct middle'}
     
     bytestring = bytes(parms['cube'], 'utf-8')
     integrity = hashlib.sha256(bytestring).hexdigest().upper()
