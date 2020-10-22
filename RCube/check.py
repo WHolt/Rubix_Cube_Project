@@ -2,12 +2,12 @@ import hashlib
 def _check(parms):
     result = {'status': ''}
     try:
-        if(parms['cube'] == '' or parms['cube'] == None): result['status'] = 'error: No Cube'
+        if(parms['cube'] == '' or 'cube' not in parms): result['status'] = 'error: No Cube'
     except:
         result['status'] = 'error: No Cube'
         return result
     try:
-        if(parms['integrity'] == '' or parms['integrity'] == None): result['status'] = 'error: No Integrity Value'
+        if(parms['integrity'] == '' or 'integrity' not in parms): result['status'] = 'error: No Integrity Value'
     except:
         result['status'] = 'error: No Integrity Value'
         return result
