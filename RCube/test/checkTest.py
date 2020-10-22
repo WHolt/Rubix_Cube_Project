@@ -104,25 +104,25 @@ class Test(unittest.TestCase):
     def test200_200_CornerCheckValidation(self):
         expectedResult = {'status': 'Corner exists'}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._check(parms)
+        actualResult = check._checkCorner(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
-    def test200_210_SlightlyShiftedCorners(self):
-        expectedResult = {'status': 'Corner exists'}
-        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._check(parms)
+    def test200_210_CornersInvalid(self):
+        expectedResult = {'status': 'Corner does not exist'}
+        parms = {'op': 'check', 'cube': 'gggygggggyyybyyyyybbgbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        actualResult = check._checkCorner(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
 #Edge Tests
     def test100_300_EdgeCheckValidation(self):
         expectedResult = {'status': 'Edge exists'}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._check(parms)
+        actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_310_EdgeCheckShifted(self):
         expectedResult = {'status': 'Edge exists'}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._check(parms)
+        actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
         
