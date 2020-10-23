@@ -22,9 +22,9 @@ def _check(parms):
     for cubie in centerColors:
         if(centerColors.count(cubie) > 1): 
             return {'status': 'error: Indistinct middle'}
-    
+    face2 = ''
     for face in cubeFaces:
-        
+        face2 += face
             
     
             
