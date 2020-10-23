@@ -115,7 +115,7 @@ class Test(unittest.TestCase):
     
 #Edge Tests
     def test100_300_EdgeCheckValidation(self):
-        expectedResult = {'status': 'Edge exists'}
+        expectedResult = {True}
         parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
         actualResult = check._checkEdge(parms)
         self.assertDictEqual(expectedResult, actualResult)
