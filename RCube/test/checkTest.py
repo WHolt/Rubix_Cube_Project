@@ -109,7 +109,7 @@ class Test(unittest.TestCase):
     
     def test200_210_CornersInvalid(self):
         expectedResult = {'status': 'Impossible corner'}
-        parms = {'op': 'check', 'cube': 'gggygggggyyybyyyyybbgbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        parms = {'op': 'check', 'cube': 'gggggggggyywyyyyyybbbbbbbbbwwywwwwwwrrrrrrrrrooooooooo'}
         actualResult = check._checkCorner(parms)
         self.assertDictEqual(expectedResult, actualResult)
     
