@@ -24,7 +24,7 @@ def _check(parms):
             return {'status': 'error: Indistinct middle'}
     
     for face in cubeFaces:
-            
+        face += face
             
     
             
