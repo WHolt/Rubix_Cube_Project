@@ -14,13 +14,21 @@ def _check(parms):
     #Actually validating what's going on with the cube
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
+        if (parms['cube'].count(face) == 9): return {'status': 'error: Incorrect number of colors'}
     cubeFaces = [parms['cube'][x:x+9] for x in range(0,len(parms['cube']),9)]
-    print(cubeFaces)
-    centerColors = ''    
+    centerColors = '' 
     for face in cubeFaces:
         centerColors += face[4]
-    for face in centerColors:
-        if(centerColors.count(face) > 1): return {'status': 'error: Indistinct middle'}
+    for cubie in centerColors:
+        if(centerColors.count(cubie) > 1): 
+            return {'status': 'error: Indistinct middle'}
+    
+    for face in cubeFaces:
+            
+            
+    
+            
+    
     
     bytestring = bytes(parms['cube'], 'utf-8')
     integrity = hashlib.sha256(bytestring).hexdigest().upper()
