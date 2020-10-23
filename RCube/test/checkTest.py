@@ -59,7 +59,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_930_TooManyCubies(self):
-        expectedResult = {'status': 'error: Incorrect number of colors'}
+        expectedResult = {'status': 'error: Incorrect number of faces'}
         parms = {'op': 'check', 'cube' :'1111111112222222223333333334444444445555555556666666667', 'integrity': '93C6A03A7B2F9F5D319128523FA96AB3C748C67EAA6FDD4DAC8311F4D0393921'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
