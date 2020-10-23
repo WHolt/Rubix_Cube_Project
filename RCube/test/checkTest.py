@@ -124,7 +124,7 @@ class Test(unittest.TestCase):
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_310_EdgeCheckInValid(self):
-        expectedResult = {'status': 'Impossible edge'}
+        expectedResult = {'status': 'error: Impossible edge'}
         #parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
         cube = 'gbgggbgggyyyyyyyyybgbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'
         actualResult = check._checkEdge(cube)
