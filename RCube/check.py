@@ -69,24 +69,22 @@ def _checkCorner(parms):
     for face in cube:
         centerColors += face[4]
     frontTopLeft = cubeFaces[0] + cubeFaces[29] + cubeFaces[42]
-    frontTopRight = cubeFaces[2] + cubeFaces[44] + cubeFaces[9]
-    frontBottomLeft = cubeFaces[6] + cubeFaces[45] + cubeFaces[35]
+    frontTopRight = cubeFaces[2] + cubeFaces[9] + cubeFaces[44]
+    frontBottomLeft = cubeFaces[6] + cubeFaces[35] + cubeFaces[45]
     frontBottomRight = cubeFaces[8] + cubeFaces[15] + cubeFaces[47]
-    backTopLeft = cubeFaces[11] + cubeFaces[38] + cubeFaces[18]
-    backTopRight = cubeFaces[20] + cubeFaces[36] + cubeFaces[27]
-    backBottomLeft = cubeFaces[17] + cubeFaces[24] + cubeFaces[53]
+    backTopLeft = cubeFaces[18] + cubeFaces[11] + cubeFaces[38]
+    backTopRight = cubeFaces[20] + cubeFaces[27] + cubeFaces[36]
+    backBottomLeft = cubeFaces[24] + cubeFaces[17] + cubeFaces[53]
     backBottomRight = cubeFaces[26] + cubeFaces[33] + cubeFaces[51]
-    front = frontTopLeft + frontTopRight + frontBottomLeft + frontBottomRight
-    back = backTopLeft + backTopRight + backBottomLeft + backBottomRight
     #Corners vs opposite middles 0&2, 1&3 4&5
     if (frontTopLeft[0] in centerColors[2] or frontTopLeft[1] in centerColors[1] or frontTopLeft[2] in centerColors[5]
-        or frontTopRight[0] in centerColors[2] or frontTopRight[1] in centerColors[1] or frontTopRight[2] in centerColors[5]
-        or frontBottomLeft[0] in centerColors[2] or frontBottomLeft[1] in centerColors[1] or frontBottomLeft[2] in centerColors[5]
-        frontBottomRight[0] in centerColors[2] or frontBottomRight[1] in centerColors[1] or frontBottomRight[2] in centerColors[5]
-        backTopLeft[0] in centerColors[2] or backTopLeft[1] in centerColors[1] or backTopLeft[2] in centerColors[5]
-        backTopRight[0] in centerColors[2] or backTopRight[1] in centerColors[1] or backTopRight[2] in centerColors[5]
-        backBottomLeft[0] in centerColors[2] or backBottomLeft[1] in centerColors[1] or backBottomLeft[2] in centerColors[5]
-        backBottomRight[0] in centerColors[2] or backBottomRight[1] in centerColors[1] or backBottomRight[2] in centerColors[5]):
+        or frontTopRight[0] in centerColors[2] or frontTopRight[1] in centerColors[3] or frontTopRight[2] in centerColors[5]
+        or frontBottomLeft[0] in centerColors[2] or frontBottomLeft[1] in centerColors[1] or frontBottomLeft[2] in centerColors[4] 
+        or frontBottomRight[0] in centerColors[2] or frontBottomRight[1] in centerColors[3] or frontBottomRight[2] in centerColors[4]
+        or backTopLeft[0] in centerColors[0] or backTopLeft[1] in centerColors[3] or backTopLeft[2] in centerColors[5]
+        or backTopRight[0] in centerColors[0] or backTopRight[1] in centerColors[1] or backTopRight[2] in centerColors[5]
+        or backBottomLeft[0] in centerColors[0] or backBottomLeft[1] in centerColors[3] or backBottomLeft[2] in centerColors[4]
+        or backBottomRight[0] in centerColors[0] or backBottomRight[1] in centerColors[1] or backBottomRight[2] in centerColors[4]):
         isCorner = {'status': 'Impossible corner'}
     else:
         isCorner = {'status': 'Corner exists'}
