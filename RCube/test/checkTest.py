@@ -118,13 +118,15 @@ class Test(unittest.TestCase):
 #Edge Tests
     def test100_300_EdgeCheckValidation(self):
         expectedResult = {'status': 'Edge exists'}
-        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._checkEdge(parms)
+        #parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        cube = 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'
+        actualResult = check._checkEdge(cube)
         self.assertDictEqual(expectedResult, actualResult)
     
     def test100_310_EdgeCheckInValid(self):
         expectedResult = {'status': 'Impossible edge'}
-        parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._checkEdge(parms)
+        #parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        cube = 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'
+        actualResult = check._checkEdge(cube)
         self.assertDictEqual(expectedResult, actualResult)
         
