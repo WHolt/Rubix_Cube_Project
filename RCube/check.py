@@ -98,7 +98,7 @@ def _checkEdge(string):
     isEdge = {'status':''}
     cubeFaces = string
     cube = [cubeFaces[x:x+9] for x in range(0,len(cubeFaces),9)]
-    cc = '' #centerColors: front, right, back, left, top, under
+    cc = '' #centerColors: 0front, 1right, 2back, 3left, 4top, 5under
     for face in cube:
         cc += face[4]
     ft = cubeFaces[1] + cubeFaces[43] #front top edge
@@ -119,7 +119,7 @@ def _checkEdge(string):
         or bl[0] in cc[0] or bl[1] in cc[1] or br[0] in cc[0] or br[1] in cc[3] or bu[0] in cc[0]
         or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
         or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
-        isEdge = {'status': 'Impossible edge'}
+            isEdge = {'status': 'Impossible edge'}
     else:
         isEdge = {'status': 'Edge exists'}
     return isEdge
