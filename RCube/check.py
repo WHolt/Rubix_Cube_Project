@@ -63,8 +63,8 @@ def _check(parms):
 
 def _checkCorner(string):
     isCorner = {'status':''}
-    cube = string
-    cubeFaces = [cube[x:x+9] for x in range(0,len(cube),9)]
+    cubeFaces = string
+    #cubeFaces = [cube[x:x+9] for x in range(0,len(cube),9)]
     centerColors = ''
     for face in cubeFaces:
         centerColors += face[4]
