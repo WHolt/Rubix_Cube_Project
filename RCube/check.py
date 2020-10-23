@@ -81,6 +81,8 @@ def _checkCorner(parms):
     #Corners vs opposite middles 0&2, 1&3 4&5
     if (frontTopLeft[0] in centerColors[2] or frontTopRight[1] in centerColors[1] or frontTopRight[2] in centerColors[5]):
         isCorner = {'status': 'Impossible corner'}
+    else:
+        isCorner = {'status': 'Corner exists'}
     return isCorner
 
 def _checkEdge(parms):
