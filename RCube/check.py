@@ -14,7 +14,6 @@ def _check(parms):
     #Actually validating what's going on with the cube
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
-        if (parms['cube'].count(face) == 9): return {'status': 'error: Incorrect number of colors'}
     qbbyColors = ''
     [qbbyColors.append(x) for x in parms['cube'] if x not in qbbyColors]
     if not(len(qbbyColors) == 6): return {'status': 'error: Incorrect number of colors'}
