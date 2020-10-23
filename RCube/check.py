@@ -2,8 +2,7 @@ import hashlib
 def _check(parms):
     result = {'status': ''}
     #Validating that the cube can be worked on Tests    
-    if(('cube' not in parms) or (parms['cube'] == '')):
-        result['status'] = 'error: No Cube'
+    if(('cube' not in parms) or (parms['cube'] == '')): result['status'] = 'error: No Cube'
         return result
     if('integrity' not in parms or parms['integrity'] == ''): 
         result['status'] = 'error: No Integrity Value'
@@ -24,9 +23,6 @@ def _check(parms):
     for cubie in centerColors:
         if(centerColors.count(cubie) > 1): 
             return {'status': 'error: Indistinct middle'}
-    face2 = ''
-    for face in cubeFaces:
-        face2 += face
             
     
             
@@ -46,7 +42,7 @@ def _checkCorner(parms):
     return isCorner
 
 def _checkEdge(parms):
-    isEdge = False 
-#    try:
-#    except:
+    isEdge = {'status':''}
+     
+    
     return isEdge
