@@ -37,7 +37,7 @@ def _check(parms):
     if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
         result['status'] = 'Impossible corner'
         return result
-        
+    print(_checkCorner(cubeCheck))
         
     #Check which pattern is on the cube
     checkFull = True
