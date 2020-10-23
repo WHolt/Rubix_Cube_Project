@@ -34,11 +34,11 @@ def _check(parms):
         return result
     #Check Corners and Edges
     cubeCheck = parms['cube']
-    if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
-        result['status'] = 'Impossible corner'
-        return result
     if (_checkEdge(cubeCheck) == {'status': 'Impossible edge'}):
         result['status'] = 'Impossible edge'
+        return result
+    if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
+        result['status'] = 'Impossible corner'
         return result
     
     #Check which pattern is on the cube
@@ -120,9 +120,6 @@ def _checkEdge(string):
         or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
         or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
             isEdge = {'status': 'Impossible edge'}
-    #Both colors can't be an outer edge to their middle color
-    elif ():
-        isEdge = {'status': 'Impossible edge'}
     else:
         isEdge = {'status': 'Edge exists'}
     return isEdge
