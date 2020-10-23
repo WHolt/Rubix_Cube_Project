@@ -33,9 +33,10 @@ def _check(parms):
         result['status'] = 'error: Wrong Integrity Value'
         return result
     #Check Corners and Edges
-    if (_checkCorner(parms['cube']) == {'status': 'Impossible corner'}):
-        result['status'] = 'Impossible corner'
-        return result
+    cubeCheck = parms['cube']
+    #if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
+     #   result['status'] = 'Impossible corner'
+      #  return result
         
         
     #Check which pattern is on the cube
@@ -61,9 +62,9 @@ def _check(parms):
     return result
  
 
-def _checkCorner(parms):
+def _checkCorner(string):
     isCorner = {'status':''}
-    cubeFaces = parms['cube']#string
+    cubeFaces = string
     cube = [cubeFaces[x:x+9] for x in range(0,len(cubeFaces),9)]
     centerColors = ''
     for face in cube:

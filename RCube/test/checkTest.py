@@ -103,8 +103,9 @@ class Test(unittest.TestCase):
 #Corner Tests
     def test200_200_CornerCheckValidation(self):
         expectedResult = {'status': 'Corner exists'}
-        parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        actualResult = check._checkCorner(parms)
+        #parms = {'op': 'check', 'cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'}
+        cube = 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo'
+        actualResult = check._checkCorner(cube)
         self.assertDictEqual(expectedResult, actualResult)
     
     def test200_210_CornersInvalid(self):
