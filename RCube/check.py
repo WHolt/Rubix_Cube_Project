@@ -37,7 +37,10 @@ def _check(parms):
     if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
         result['status'] = 'Impossible corner'
         return result
-        
+    #if (_checkEdge(cubeCheck) == {'status': 'Impossible edge'}):
+    #    result['status'] = 'Impossible edge'
+    #    return result
+    
     #Check which pattern is on the cube
     checkFull = True
     checkCross = True
@@ -68,6 +71,7 @@ def _checkCorner(string):
     centerColors = ''
     for face in cube:
         centerColors += face[4]
+    #Order for corners is front/back, side, top/bottom
     frontTopLeft = cubeFaces[0] + cubeFaces[29] + cubeFaces[42]
     frontTopRight = cubeFaces[2] + cubeFaces[9] + cubeFaces[44]
     frontBottomLeft = cubeFaces[6] + cubeFaces[35] + cubeFaces[45]
@@ -76,7 +80,7 @@ def _checkCorner(string):
     backTopRight = cubeFaces[20] + cubeFaces[27] + cubeFaces[36]
     backBottomLeft = cubeFaces[24] + cubeFaces[17] + cubeFaces[53]
     backBottomRight = cubeFaces[26] + cubeFaces[33] + cubeFaces[51]
-    #Corners vs opposite middles 0&2, 1&3 4&5
+    #Corners vs opposite middles 0&2, 1&3 4&5. 
     if (frontTopLeft[0] in centerColors[2] or frontTopLeft[1] in centerColors[1] or frontTopLeft[2] in centerColors[5]
         or frontTopRight[0] in centerColors[2] or frontTopRight[1] in centerColors[3] or frontTopRight[2] in centerColors[5]
         or frontBottomLeft[0] in centerColors[2] or frontBottomLeft[1] in centerColors[1] or frontBottomLeft[2] in centerColors[4] 
@@ -92,6 +96,30 @@ def _checkCorner(string):
 
 def _checkEdge(string):
     isEdge = {'status':''}
-     
-    
+    cubeFaces = string
+    cube = [cubeFaces[x:x+9] for x in range(0,len(cubeFaces),9)]
+    cc = '' #centerColors: front, right, back, left, top, under
+    for face in cube:
+        cc += face[4]
+    ft = cubeFaces[1] + cubeFaces[43] #front top edge
+    fl = cubeFaces[3] + cubeFaces[32] #front left edge
+    fr = cubeFaces[5] + cubeFaces[12] #front right edge
+    fu = cubeFaces[7] + cubeFaces[46] #front under edge
+    bt = cubeFaces[19] + cubeFaces[37] #back top edge
+    bl = cubeFaces[21] + cubeFaces[14] #back left edge
+    br = cubeFaces[23] + cubeFaces[30] #back right edge
+    bu = cubeFaces[25] + cubeFaces[52] #back under edge
+    rt = cubeFaces[10] + cubeFaces[41] #right top edge 
+    ru = cubeFaces[16] + cubeFaces[50] #right under edge
+    lt = cubeFaces[28] + cubeFaces[39] #left top edge
+    lu = cubeFaces[34] + cubeFaces[48] #left under edge
+    #Edges vs opposite middles: 0(front) & 2(back) , 1(right) & 3(left), 4(top) & 5(under)
+    if (ft[0] in cc[2] or ft[1] in cc[5] or fl[0] in cc[2] or fl[1] in cc[1] or fr[0] in cc[2]
+        or fr[1] in cc[3] or fu[0] in cc[2] or fu[1] in cc[4] or bt[0] in cc[0] or bt[1] in cc[5]
+        or bl[0] in cc[0] or bl[1] in cc[1] or br[0] in cc[0] or br[1] in cc[3] or bu[0] in cc[0]
+        or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
+        or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
+        isEdge = {'status': 'Impossible edge'}
+    else:
+        isEdge = {'status': 'Edge exists'}
     return isEdge
