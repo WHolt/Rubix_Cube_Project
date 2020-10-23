@@ -106,8 +106,8 @@ def _checkEdge(string):
     fr = cubeFaces[5] + cubeFaces[12] #front right edge
     fu = cubeFaces[7] + cubeFaces[46] #front under edge
     bt = cubeFaces[19] + cubeFaces[37] #back top edge
-    bl = cubeFaces[21] + cubeFaces[14] #back left edge
-    br = cubeFaces[23] + cubeFaces[30] #back right edge
+    br = cubeFaces[21] + cubeFaces[14] #back left edge
+    bl = cubeFaces[23] + cubeFaces[30] #back right edge
     bu = cubeFaces[25] + cubeFaces[52] #back under edge
     rt = cubeFaces[10] + cubeFaces[41] #right top edge 
     ru = cubeFaces[16] + cubeFaces[50] #right under edge
