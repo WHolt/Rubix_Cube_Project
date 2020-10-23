@@ -72,7 +72,7 @@ class Test(unittest.TestCase):
     
     def test100_950_ImpossibleCorner(self):
         expectedResult = {'status': 'error: Impossible corner'}
-        parms = {'op': 'check', 'cube' :'112111111522222222333333333444444444555555551666666666', 'integrity': '5572DDB8ED3FF835CFA36C776D8EC29CFD55F134046CFE0169AABD3AD4C4DE9B'}
+        parms = {'op': 'check', 'cube' :'bbgbbbbbbwoooooooogogggggggrrrrrrrrrwwwwwwwwbyyyyyyyyy', 'integrity': '573D39853F85AFD6E55A0760EFA1EBE8A7EACA41753055D9B41D0B3FC5C2E986'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
          
