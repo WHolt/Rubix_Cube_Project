@@ -119,7 +119,7 @@ def _checkEdge(string):
         or bl[0] in cc[0] or bl[1] in cc[1] or br[0] in cc[0] or br[1] in cc[3] or bu[0] in cc[0]
         or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
         or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
-            isEdge = {'status': 'Impossible edge'}
+            isEdge = {'status': 'error: Impossible edge'}
     else:
         isEdge = {'status': 'Edge exists'}
     return isEdge
