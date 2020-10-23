@@ -79,7 +79,14 @@ def _checkCorner(parms):
     front = frontTopLeft + frontTopRight + frontBottomLeft + frontBottomRight
     back = backTopLeft + backTopRight + backBottomLeft + backBottomRight
     #Corners vs opposite middles 0&2, 1&3 4&5
-    if (frontTopLeft[0] in centerColors[2] or frontTopRight[1] in centerColors[1] or frontTopRight[2] in centerColors[5]):
+    if (frontTopLeft[0] in centerColors[2] or frontTopLeft[1] in centerColors[1] or frontTopLeft[2] in centerColors[5]
+        or frontTopRight[0] in centerColors[2] or frontTopRight[1] in centerColors[1] or frontTopRight[2] in centerColors[5]
+        or frontBottomLeft[0] in centerColors[2] or frontBottomLeft[1] in centerColors[1] or frontBottomLeft[2] in centerColors[5]
+        frontBottomRight[0] in centerColors[2] or frontBottomRight[1] in centerColors[1] or frontBottomRight[2] in centerColors[5]
+        backTopLeft[0] in centerColors[2] or backTopLeft[1] in centerColors[1] or backTopLeft[2] in centerColors[5]
+        backTopRight[0] in centerColors[2] or backTopRight[1] in centerColors[1] or backTopRight[2] in centerColors[5]
+        backBottomLeft[0] in centerColors[2] or backBottomLeft[1] in centerColors[1] or backBottomLeft[2] in centerColors[5]
+        backBottomRight[0] in centerColors[2] or backBottomRight[1] in centerColors[1] or backBottomRight[2] in centerColors[5]):
         isCorner = {'status': 'Impossible corner'}
     else:
         isCorner = {'status': 'Corner exists'}
