@@ -34,10 +34,10 @@ def _check(parms):
         return result
     #Check Corners and Edges
     cubeCheck = parms['cube']
-    if (_checkEdge(cubeCheck) == {'status': 'Impossible edge'}):
+    if (_checkEdge(cubeCheck) == {'status': 'error: Impossible edge'}):
         result['status'] = 'error: Impossible edge'
         return result
-    if (_checkCorner(cubeCheck) == {'status': 'Impossible corner'}):
+    if (_checkCorner(cubeCheck) == {'status': 'error: Impossible corner'}):
         result['status'] = 'error: Impossible corner'
         return result
     
@@ -89,7 +89,7 @@ def _checkCorner(string):
         or backTopRight[0] in centerColors[0] or backTopRight[1] in centerColors[1] or backTopRight[2] in centerColors[5]
         or backBottomLeft[0] in centerColors[0] or backBottomLeft[1] in centerColors[3] or backBottomLeft[2] in centerColors[4]
         or backBottomRight[0] in centerColors[0] or backBottomRight[1] in centerColors[1] or backBottomRight[2] in centerColors[4]):
-        isCorner = {'status': 'Impossible corner'}
+        isCorner = {'status': 'error: Impossible corner'}
     else:
         isCorner = {'status': 'Corner exists'}
     return isCorner
