@@ -65,6 +65,9 @@ def _checkCorner(string):
     isCorner = {'status':''}
     cube = string
     cubeFaces = [cube[x:x+9] for x in range(0,len(cube),9)]
+    centerColors = ''
+    for face in cubeFaces:
+        centerColors += face[4]
     frontTopLeft = cubeFaces[0] + cubeFaces[29] + cubeFaces[42]
     frontTopRight = cubeFaces[2] + cubeFaces[44] + cubeFaces[9]
     frontBottomLeft = cubeFaces[6] + cubeFaces[45] + cubeFaces[35]
@@ -75,12 +78,8 @@ def _checkCorner(string):
     backBottomRight = cubeFaces[26] + cubeFaces[33] + cubeFaces[51]
     front = frontTopLeft + frontTopRight + frontBottomLeft + frontBottomRight
     back = backTopLeft + backTopRight + backBottomLeft + backBottomRight
-    #front top left vs back top right
-    if(front[0] == back[0] or front[1] == back[1] or front[2] == back[2]
-        or front[3] == back[3] or front[4] == back[4] or front[5] == back[5]
-        or front[6] == back[6] or front[7] == back[7] or front[8] == back[8]
-        or front[9] == back[9] or front[10] == back[10] or front[11] == back[11]
-        or front[12] == back[12]):
+    #Corners vs opposite middles 0&2, 1&3 4&5
+    if (frontTopLeft[0] in centerColors[2] or frontTopRight[1] in centerColors[1] or frontTopRight[2] in centerColors[5]):
         isCorner = {'status': 'Impossible corner'}
     return isCorner
 
