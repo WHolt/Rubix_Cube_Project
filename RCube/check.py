@@ -13,6 +13,7 @@ def _check(parms):
         result['status'] = 'error: Wrong number of faces'
         return result
     #Actually validating what's going on with the cube
+    #Run tests to confirm that is a rubik's cube
     for face in parms['cube']:
         if (parms['cube'].count(face) > 9): return {'status': 'error: Incorrect number of colors'}
     qbbyColors = []
@@ -27,6 +28,7 @@ def _check(parms):
             return {'status': 'error: Indistinct middle'}
     bytestring = bytes(parms['cube'], 'utf-8')
     integrity = hashlib.sha256(bytestring).hexdigest().upper()
+    print(integrity)
     if not(parms['integrity'] == integrity):
         result['status'] = 'error: Wrong Integrity Value'
         return result  
@@ -50,6 +52,7 @@ def _check(parms):
     else:
         result['status'] = 'unknown'
     return result
+ 
 
 def _checkCorner(parms):
     isCorner = {'status':''}
