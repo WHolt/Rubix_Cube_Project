@@ -109,17 +109,29 @@ def _checkEdge(string):
     br = cubeFaces[21] + cubeFaces[14] #back left edge
     bl = cubeFaces[23] + cubeFaces[30] #back right edge
     bu = cubeFaces[25] + cubeFaces[52] #back under edge
-    rt = cubeFaces[10] + cubeFaces[41] #right top edge 
+    tr = cubeFaces[41] + cubeFaces[10] #right top edge 
     ru = cubeFaces[16] + cubeFaces[50] #right under edge
     lt = cubeFaces[28] + cubeFaces[39] #left top edge
-    lu = cubeFaces[34] + cubeFaces[48] #left under edge
+    ul = cubeFaces[48] + cubeFaces[34] #left under edge
+    edgeSpots = [ft, fr, fu, fl, lt, tr, ru, ul, bt, bl, bu, br]
     #Edges vs opposite middles: 0(front) & 2(back) , 1(right) & 3(left), 4(top) & 5(under)
-    if (ft[0] in cc[2] or ft[1] in cc[5] or fl[0] in cc[2] or fl[1] in cc[1] or fr[0] in cc[2]
-        or fr[1] in cc[3] or fu[0] in cc[2] or fu[1] in cc[4] or bt[0] in cc[0] or bt[1] in cc[5]
-        or bl[0] in cc[0] or bl[1] in cc[1] or br[0] in cc[0] or br[1] in cc[3] or bu[0] in cc[0]
-        or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
-        or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
+#     if (ft[0] in cc[2] or ft[1] in cc[5] or fl[0] in cc[2] or fl[1] in cc[1] or fr[0] in cc[2]
+#         or fr[1] in cc[3] or fu[0] in cc[2] or fu[1] in cc[4] or bt[0] in cc[0] or bt[1] in cc[5]
+#         or bl[0] in cc[0] or bl[1] in cc[1] or br[0] in cc[0] or br[1] in cc[3] or bu[0] in cc[0]
+#         or bu[1] in cc[4] or rt[0] in cc[3] or rt[1] in cc[5] or ru[0] in cc[3] or ru[1] in cc[4]
+#         or lt[0] in cc[1] or lt[1] in cc[5] or lu[0] in cc[1] or lu[1] in cc[4]):
+#             isEdge = {'status': 'error: Impossible edge'}
+#     else:
+#         isEdge = {'status': 'Edge exists'}
+    for edge in edgeSpots: 
+        if((cc[0] in edge) and (cc[2] in edge)):
             isEdge = {'status': 'error: Impossible edge'}
-    else:
-        isEdge = {'status': 'Edge exists'}
+            return isEdge
+        if((cc[1] in edge) and (cc[3] in edge)):
+            isEdge = {'status': 'error: Impossible edge'}
+            return isEdge
+        if((cc[4] in edge) and (cc[5] in edge)):
+            isEdge = {'status': 'error: Impossible edge'}
+            return isEdge
+    isEdge = {'status': 'Edge exists'}
     return isEdge

@@ -90,7 +90,7 @@ class Test(unittest.TestCase):
          
     def test100_955_ImpossibleEdge(self):
         expectedResult = {'status': 'error: Impossible edge'}
-        parms = {'op': 'check', 'cube' :'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr', 'integrity': '3C0BA8BDCEDE1484616367FF864B66B643B8AF08566F650C4A43148CEAC8D289'}
+        parms = {'op': 'check', 'cube' :'gggggggggrrrrrrrrrbbbbbbbybooooooooowwwwwwwwwybyyyyyyy', 'integrity': '96DDC169F9D847DC098BA3805C1AD55B088293F0138D7D1603C03543F7D5589E'}
         actualResult = check._check(parms)
         self.assertDictEqual(expectedResult, actualResult)
 #     
@@ -138,7 +138,7 @@ class Test(unittest.TestCase):
     def test100_310_EdgeCheckInValid(self):
         expectedResult = {'status': 'error: Impossible edge'}
         #parms = {'op': 'check', 'cube': 'gggggbgggyyyyyyyyybbbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'}
-        cube = 'gbgggbgggyyyyyyyyybgbbbgbbbwwwwwwwwwrrrrrrrrrooooooooo'
+        cube = 'gwwrgyobwogwwwwboybrbgbrgrwroowybrgbyyoyoyobgyyrorbggr'
         actualResult = check._checkEdge(cube)
         self.assertDictEqual(expectedResult, actualResult)
         
