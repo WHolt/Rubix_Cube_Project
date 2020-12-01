@@ -51,9 +51,9 @@ def _rotate(parms):
     
 def _frontRotation(facesofCube = [], direction =''):
     if(len(facesofCube) == 0):
-        return {'error': 'missing input'}
+        return {'error': 'Length of cube missing'}
     if(direction == ''): 
-        return {'error': 'missing input'}
+        return {'error': 'Input direction missing'}
     rotateCube = ''
     #Make cube lists to manipulate characters
     for face in range(0,6):
@@ -69,7 +69,8 @@ def _frontRotation(facesofCube = [], direction =''):
         index = 0
         for cubeFace in top:
             facesofCube[1][index] = face
-            if index == 6: break
+            if index == 6: 
+                break
             index += 3 #Get indices 0,3 and 6
         for cubeFace in left:
             facesofCube[4][index] = face
@@ -77,7 +78,8 @@ def _frontRotation(facesofCube = [], direction =''):
         index = 0
         for cubeFace in right:
             facesofCube[5][index] = face
-            if index == 2: break
+            if index == 2: 
+                break
             index += 1 #Get indices 0,1 and 2
         for cubeFace in bottom:
             facesofCube[3][index] = face
@@ -104,7 +106,7 @@ def _frontRotation(facesofCube = [], direction =''):
     facesofCube[0] = _centerRotation(facesofCube[0], direction)
     for cubeFace in facesofCube:
         rotateCube += ''.join(cubeFace)
-    return{'rotateCube':rotateCube}
+    return{'rotateCube': rotateCube}
     
 def _backRotation(facesofCube = [], direction =''):
     if(len(facesofCube) == 0): return {'error': 'missing input'}
@@ -398,9 +400,9 @@ def _underRotation(facesofCube = [], direction =''):
     
 def _centerRotation(face = [], direction = ''):
     if(len(face) == 0): 
-        return{'error':'missing input'}
+        return{'error': 'length value missing'}
     if(direction == ''): 
-        return {'error': 'missing input'}
+        return {'error': 'Direction value missing'}
     cutCenter = list()
     temp = list()
     for cubies in face:
@@ -409,7 +411,7 @@ def _centerRotation(face = [], direction = ''):
             cutCenter.append(temp)
             temp = list()
     #Reverse the string and rotate it.
-    if (direction.islower()):
+    if direction.islower():
         rotateCenter = list(zip(*cutCenter[::-1]))
     #Rotate string and the reverse it
     else:
