@@ -12,9 +12,9 @@ def _rotate(parms):
         return {'status': 'error: Integrity key missing'}
     if(parms['integrity'] == ''): 
         return {'status': 'error: Integrity value missing'}
-    if(not([parms['side'] in rotations])):
+    if(not(['side' in rotations])):
             return {'status': 'error: Rotation key missing'}
-    if(not([parms['side'] in rotations])):
+    if([parms['side'] in rotations]):
             return {'status': 'error: Rotation value missing'}
    
     cubeIsValid = check._check(parms)
@@ -43,7 +43,7 @@ def _rotate(parms):
         
     cubeBytes = bytes(rotateCube['rotateCube'], 'utf-8')
     integrity = hashlib.sha256(cubeBytes).hexdigest().upper()
-    return {'status':'rotated','cube':rotateCube['rotateCube'], 'integrity':integrity}
+    return {'status':'rotated','cube': rotateCube['rotateCube'], 'integrity':integrity}
     
 def _frontRotation(facesofCube = [], direction =''):
     if(len(facesofCube == 0)):
