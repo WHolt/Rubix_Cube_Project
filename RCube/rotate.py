@@ -5,7 +5,7 @@ rotations = ['f','F','b','B','r','R', 't','T','u','U']
 
 def _rotate(parms):
     if(not('cube' in parms)): 
-        return {'status': 'error: missing cube key'}
+        return {'status': 'error: Cube key missing'}
     if(parms['cube'] == ''): 
         return {'status': 'error: missing cube value'}
     if(not('integrity' in parms)): 
