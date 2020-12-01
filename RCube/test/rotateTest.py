@@ -136,7 +136,7 @@ class Test(unittest.TestCase):
         self.assertEqual(expected, actual)
     
     def testRotationValue_U(self):
-        expected = {'cube': 'oooooogggggggggrrrrrrrrrbbbbbbbbbooowwwwwwwwwyyyyyyyyy', 'integrity': '72BD1F1E2822F5FE5A0EB5A75F6E926709A2FD455503016F549EC4E449F954B6', 'status': 'rotated'}
+        expected = {'cube': 'oooooobbbggggggooorrrrrrrrrbbbbbbrrrwwwwwwwwwyyyyyyyyy', 'integrity': 'B67C93781FD3959F10A958E403A441E50071A8ECE6E8FBA6B9BC2F23183F9663', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'U', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
