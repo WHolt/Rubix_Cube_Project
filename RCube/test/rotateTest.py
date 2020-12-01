@@ -50,7 +50,13 @@ class Test(unittest.TestCase):
         parms = {'op': 'rotate','cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
-        
+    
+    def test900_045_RotationValueFailed(self):
+        expectedResult = {'status': 'error: Rotation key missing'}
+        parms = {'op': 'rotate', 'side':'p','cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': '763F71B164EF77E6916F1C2CBAEB3B2C3CA9A876AC6A94A97D6B0EF1C489E289'}
+        actualResult = rotate._rotate(parms)
+        self.assertDictEqual(expectedResult, actualResult)    
+    
     def test900_050_IntegrityValueMissing(self):
         expectedResult = {'status': 'error: Integrity value missing'}
         parms = {'op': 'rotate','side':'u','cube': 'gggggggggyyyyyyyyybbbbbbbbbwwwwwwwwwrrrrrrrrrooooooooo', 'integrity': ''}
