@@ -50,7 +50,7 @@ def _rotate(parms):
     return {'status':'rotated','cube': rotateCube['rotateCube'], 'integrity':integrity}
     
 def _frontRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)):
+    if(len(facesofCube) == 0):
         return {'error': 'missing input'}
     if(direction == ''): 
         return {'error': 'missing input'}
@@ -107,7 +107,7 @@ def _frontRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _backRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)): return {'error': 'missing input'}
+    if(len(facesofCube) == 0): return {'error': 'missing input'}
     if(direction == ''): return {'error': 'missing input'}
         
     rotateCube = ''
@@ -166,7 +166,7 @@ def _backRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _leftRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)): 
+    if(len(facesofCube) == 0): 
         return {'error': 'missing input'}
     if(direction == ''): 
         return {'error': 'missing input'}
@@ -225,7 +225,7 @@ def _leftRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _rightRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)): return {'error': 'missing input'}
+    if(len(facesofCube) == 0): return {'error': 'missing input'}
     if(direction == ''): return {'error': 'missing input'}
         
     rotateCube = ''
@@ -281,7 +281,7 @@ def _rightRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _topRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)): 
+    if(len(facesofCube) == 0): 
         return {'error': 'missing input'}
     if(direction == ''): 
         return {'error': 'missing input'}
@@ -340,7 +340,7 @@ def _topRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _underRotation(facesofCube = [], direction =''):
-    if(len(facesofCube == 0)): return {'error': 'missing input'}
+    if(len(facesofCube) == 0): return {'error': 'missing input'}
     if(direction == ''): return {'error': 'missing input'}
         
     rotateCube = ''

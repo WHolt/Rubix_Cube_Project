@@ -28,8 +28,7 @@ def _check(parms):
             return {'status': 'error: Indistinct middle'}
     #Check integrity
     bytestring = bytes(parms['cube'], 'utf-8')
-    integrity = hashlib.sha256(bytestring).hexdigest().upper()
-    print(integrity)
+    integrity = hashlib.sha256(bytestring).hexdigest().upper() 
     if not(parms['integrity'] == integrity):
         result['status'] = 'error: Wrong Integrity Value'
         return result
