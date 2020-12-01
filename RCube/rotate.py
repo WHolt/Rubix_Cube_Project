@@ -105,12 +105,14 @@ def _frontRotation(facesofCube = [], direction =''):
     
     facesofCube[0] = _centerRotation(facesofCube[0], direction)
     for cubeFace in facesofCube:
-        rotateCube += ''.join(str(cubeFace))
+        rotateCube += ''.join(cubeFace)
     return{'rotateCube': rotateCube}
     
 def _backRotation(facesofCube = [], direction =''):
-    if(len(facesofCube) == 0): return {'error': 'missing input'}
-    if(direction == ''): return {'error': 'missing input'}
+    if(len(facesofCube) == 0):
+        return {'error': 'Length of cube missing'}
+    if(direction == ''): 
+        return {'error': 'Input direction missing'}
         
     rotateCube = ''
     for face in range(0,6):
@@ -139,6 +141,7 @@ def _backRotation(facesofCube = [], direction =''):
         for cubeFace in bottom:
             facesofCube[1][index] = face
             index += 3 #Get indices 0,1 and 2
+        index = 0
         for cubeFace in left:
             facesofCube[4][index] = face
             index += 1 #Get indices 2,5 and 8
@@ -168,10 +171,10 @@ def _backRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _leftRotation(facesofCube = [], direction =''):
-    if(len(facesofCube) == 0): 
-        return {'error': 'missing input'}
+    if(len(facesofCube) == 0):
+        return {'error': 'Length of cube missing'}
     if(direction == ''): 
-        return {'error': 'missing input'}
+        return {'error': 'Input direction missing'}
         
     rotateCube = ''
     for face in range(0,6):
@@ -227,8 +230,10 @@ def _leftRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _rightRotation(facesofCube = [], direction =''):
-    if(len(facesofCube) == 0): return {'error': 'missing input'}
-    if(direction == ''): return {'error': 'missing input'}
+    if(len(facesofCube) == 0):
+        return {'error': 'Length of cube missing'}
+    if(direction == ''): 
+        return {'error': 'Input direction missing'}
         
     rotateCube = ''
     for face in range(0,6):
