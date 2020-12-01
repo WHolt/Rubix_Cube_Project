@@ -12,10 +12,12 @@ def _rotate(parms):
         return {'status': 'error: Integrity key missing'}
     if(parms['integrity'] == ''): 
         return {'status': 'error: Integrity value missing'}
-    if(not('side' in rotations)):
+    if(not('side' in parms)):
             return {'status': 'error: Rotation key missing'}
-    if([parms['side'] in rotations]):
+    if([parms['side'] in parms]):
             return {'status': 'error: Rotation value missing'}
+    if([parms['side'] in rotations]):
+            return {'status': 'error: Rotation value not in library'}
    
     cubeIsValid = check._check(parms)
     facesofCube = [parms['cube'][i:i+9] for i in range(0, len(parms['cube']), 9)]
