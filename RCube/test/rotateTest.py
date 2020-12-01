@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
 #Happy path
     def test100_010_RotateRandomCube(self):
         expectedResult = {'status':'rotated','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
-        parms = {'op': 'rotate', 'side':'F','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
+        parms = {'op': 'rotate', 'side':'F','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': 'C2541978094B8FF38D7F143F1E3608F90565CF6501215D597E7E3DDD5D4F65B4'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_020_RotateFullCube(self):
