@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
     
 #Sad Path    
     def test900_010_CubeValueMissing(self):
-        expectedResult = {'Status':'error: Cube value missing'}
+        expectedResult = {'status':'error: Cube value missing'}
         parms = {'op': 'rotate', 'side':'u', 'cube': '', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
