@@ -403,7 +403,7 @@ def _underRotation(facesofCube = [], direction =''):
     
     facesofCube[5] = _centerRotation(facesofCube[5], direction)
     for cubeFaces in facesofCube:
-        rotateCube += ''.join(str(cubeFaces))
+        rotateCube += ''.join(cubeFaces)
     return {'rotateCube': rotateCube}
     
 def _centerRotation(face = [], direction = ''):
