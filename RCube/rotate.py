@@ -7,9 +7,11 @@ def _rotate(parms):
     if(not('cube' in parms)): 
         return {'status': 'error: Cube key missing'}
     if(parms['cube'] == ''): 
-        return {'status': 'error: missing cube value'}
+        return {'status': 'error: Cube value missing'}
     if(not('integrity' in parms)): 
-        return {'status': 'error: missing integrity key'}
+        return {'status': 'error: Integrity key missing'}
+    if(parms['integrity'] == ''): 
+        return {'status': 'error: Integrity value missing'}
     if(not([parms['side'] in rotations])):
             return {'status': 'error: invalid side value'}
    
