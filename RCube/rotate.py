@@ -12,7 +12,7 @@ def _rotate(parms):
         return {'status': 'error: Integrity key missing'}
     if(parms['integrity'] == ''): 
         return {'status': 'error: Integrity value missing'}
-    if(not(['side' in rotations])):
+    if(not('side' in rotations)):
             return {'status': 'error: Rotation key missing'}
     if([parms['side'] in rotations]):
             return {'status': 'error: Rotation value missing'}
