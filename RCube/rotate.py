@@ -260,6 +260,7 @@ def _rightRotation(facesofCube = [], direction =''):
         for cubeFace in bottom:
             facesofCube[0][index] = face
             index += 3 #Get indices 0,1 and 2
+        index = 2
         for cubeFace in left:
             facesofCube[4][index] = face
             index += 3 #Get indices 2,5 and 8
