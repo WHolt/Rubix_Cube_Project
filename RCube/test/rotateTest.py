@@ -88,7 +88,7 @@ class Test(unittest.TestCase):
         self.assertEqual(expected, actual)
     
     def testRotationValue_R(self):
-        expected = {'cube': 'oowoowoowgggggggggyrryrryrrbbbbbbbbbwwrwwrwwryyoyyoyyo', 'integrity': '112609867666974AACB5AF5F7FBCB3313AF5F8C9C0FEAA4A265089B692132F0B', 'status': 'rotated'}
+        expected = {'cube': 'oowoowoowgggggggggyrryrryrrbbbbbbbbbrwwrwwrwwyyoyyoyyo', 'integrity': '112609867666974AACB5AF5F7FBCB3313AF5F8C9C0FEAA4A265089B692132F0B', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'R', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
