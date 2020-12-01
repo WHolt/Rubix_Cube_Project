@@ -289,10 +289,10 @@ def _rightRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _topRotation(facesofCube = [], direction =''):
-    if(len(facesofCube) == 0): 
-        return {'error': 'missing input'}
+    if(len(facesofCube) == 0):
+        return {'error': 'Length of cube missing'}
     if(direction == ''): 
-        return {'error': 'missing input'}
+        return {'error': 'Input direction missing'}
         
     rotateCube = ''
     for face in range(0,6):
@@ -348,8 +348,10 @@ def _topRotation(facesofCube = [], direction =''):
     return{'rotateCube':rotateCube}
     
 def _underRotation(facesofCube = [], direction =''):
-    if(len(facesofCube) == 0): return {'error': 'missing input'}
-    if(direction == ''): return {'error': 'missing input'}
+    if(len(facesofCube) == 0):
+        return {'error': 'Length of cube missing'}
+    if(direction == ''): 
+        return {'error': 'Input direction missing'}
         
     rotateCube = ''
     for face in range(0,6):
@@ -401,12 +403,12 @@ def _underRotation(facesofCube = [], direction =''):
     
     facesofCube[5] = _centerRotation(facesofCube[5], direction)
     for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+        rotateCube += ''.join(str(cubeFace))
     return {'rotateCube': rotateCube}
     
 def _centerRotation(face = [], direction = ''):
     if(len(face) == 0): 
-        return{'error': 'length value missing'}
+        return{'error': 'Cubie faces missing'}
     if(direction == ''): 
         return {'error': 'Direction value missing'}
     cutCenter = list()
