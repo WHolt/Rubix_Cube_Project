@@ -16,7 +16,7 @@ def _rotate(parms):
             return {'status': 'error: Rotation key missing'}
     if(parms['side'] == ''):
             return {'status': 'error: Rotation value missing'}
-    if(parms['side'] in rotations):
+    if(not(parms['side'] in rotations)):
             return {'status': 'error: Rotation value not in library'}
    
     cubeIsValid = check._check(parms)
