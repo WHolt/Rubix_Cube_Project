@@ -68,44 +68,44 @@ def _frontRotation(facesofCube = [], direction =''):
         #right rotation
         index = 0
         for cubeFace in top:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             if index == 6: 
                 break
             index += 3 #Get indices 0,3 and 6
         for cubeFace in left:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 0
         for cubeFace in right:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             if index == 2: 
                 break
             index += 1 #Get indices 0,1 and 2
         for cubeFace in bottom:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 3 #Get indices 2,5 and 8
     else:
         #left rotation
         index = 0
         for cubeFace in bottom:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             if index == 6: break
             index += 3 #Get indices 0,3 and 6
         for cubeFace in right:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 0
         for cubeFace in left:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             if index == 2: break
             index += 1 #Get indices 0,1 and 2
         for cubeFace in top:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 3 #Get indices 2,5 and 8 
     
     facesofCube[0] = _centerRotation(facesofCube[0], direction)
-    for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+    for cubeFaces in facesofCube:
+        rotateCube += ''.join(cubeFaces)
     return{'rotateCube': rotateCube}
     
 def _backRotation(facesofCube = [], direction =''):
@@ -130,44 +130,44 @@ def _backRotation(facesofCube = [], direction =''):
         #right rotation
         index = 0
         for cubeFace in top:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             if index == 6: break
             index += 3 #Get indices 0,3 and 6
         index = 6
         for cubeFace in right:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 2
         for cubeFace in bottom:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
         for cubeFace in left:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 1 #Get indices 2,5 and 8
     else:
         #left rotation
         index = 0
         for cubeFace in bottom:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             if index == 6: break
             index += 3 #Get indices 0,3 and 6
         index = 6
         for cubeFace in left:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 2
         for cubeFace in right:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
         for cubeFace in top:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 1 #Get indices 2,5 and 8 
     
     facesofCube[center] = _centerRotation(facesofCube[center], direction)
-    for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+    for cubeFaces in facesofCube:
+        rotateCube += ''.join(cubeFaces)
     return{'rotateCube':rotateCube}
     
 def _leftRotation(facesofCube = [], direction =''):
@@ -191,42 +191,42 @@ def _leftRotation(facesofCube = [], direction =''):
         #right rotation
         index = 0
         for cubeFace in top:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 3 #Get indices 0,3 and 6
         index = 0
         for cubeFace in right:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 3 #Get indices 6,7 and 8
         index = 2
         for cubeFace in bottom:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
         for cubeFace in left:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 3 #Get indices 2,5 and 8
     else:
     #left rotation
         index = 0
         for cubeFace in bottom:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 3 #Get indices 0,3 and 6
         index = 0
         for cubeFace in left:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 3 #Get indices 6,7 and 8
         index = 2
         for cubeFace in top:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
         for cubeFace in right:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 3 #Get indices 2,5 and 8 
     
     facesofCube[3] = _centerRotation(facesofCube[3], direction)
-    for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+    for cubeFaces in facesofCube:
+        rotateCube += ''.join(cubeFaces)
     return{'rotateCube':rotateCube}
     
 def _rightRotation(facesofCube = [], direction =''):
@@ -250,37 +250,37 @@ def _rightRotation(facesofCube = [], direction =''):
         #right rotation
         index = 0
         for cubeFace in top:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 3 #Get indices 0,3 and 6
         index = 2
         for cubeFace in right:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 3 #Get indices 6,7 and 8
         index = 2
         for cubeFace in bottom:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 2
         for cubeFace in left:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 3 #Get indices 2,5 and 8
     else:
         #left rotation
         index = 0
         for cubeFace in bottom:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 3 #Get indices 0,3 and 6
         index = 2
         for cubeFace in left:
-            facesofCube[5][index] = face
+            facesofCube[5][index] = cubeFace
             index += 3 #Get indices 6,7 and 8
         index = 2
         for cubeFace in top:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
         for cubeFace in right:
-            facesofCube[4][index] = face
+            facesofCube[4][index] = cubeFace
             index += 3 #Get indices 2,5 and 8 
     
     facesofCube[1] = _centerRotation(facesofCube[1], direction)
@@ -309,42 +309,42 @@ def _topRotation(facesofCube = [], direction =''):
         #right rotation
         index = 0
         for cubeFace in top:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             index += 1 #Get indices 0,3 and 6
         index = 0
         for cubeFace in right:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 0
         for cubeFace in bottom:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 1 #Get indices 0,1 and 2
         index = 0
         for cubeFace in left:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 1 #Get indices 2,5 and 8
     else:
     #left rotation
         index = 0
         for cubeFace in bottom:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             index += 1 #Get indices 0,3 and 6
         index = 0
         for cubeFace in left:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 0
         for cubeFace in top:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 1 #Get indices 0,1 and 2
         index = 0
         for cubeFace in right:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 1 #Get indices 2,5 and 8 
     
     facesofCube[4] = _centerRotation(facesofCube[4], direction)
-    for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+    for cubeFaces in facesofCube:
+        rotateCube += ''.join(cubeFaces)
     return{'rotateCube':rotateCube}
     
 def _underRotation(facesofCube = [], direction =''):
@@ -368,42 +368,42 @@ def _underRotation(facesofCube = [], direction =''):
         #right rotation
         index = 6
         for cubeFace in top:
-            facesofCube[1][index] = face
+            facesofCube[1][index] = cubeFace
             index += 1 #Get indices 0,3 and 6
         index = 6
         for cubeFace in right:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 6
         for cubeFace in bottom:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 1 #Get indices 0,1 and 2
         index = 6
         for cubeFace in left:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 1 #Get indices 2,5 and 8
     else:
         #left rotation
         index = 6
         for cubeFace in bottom:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 1 #Get indices 0,3 and 6
         index = 6
         for cubeFace in left:
-            facesofCube[2][index] = face
+            facesofCube[2][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 6
         for cubeFace in top:
-            facesofCube[3][index] = face
+            facesofCube[3][index] = cubeFace
             index += 1 #Get indices 0,1 and 2
         index = 6
         for cubeFace in right:
-            facesofCube[0][index] = face
+            facesofCube[0][index] = cubeFace
             index += 1 #Get indices 2,5 and 8 
     
     facesofCube[5] = _centerRotation(facesofCube[5], direction)
-    for cubeFace in facesofCube:
-        rotateCube += ''.join(str(cubeFace))
+    for cubeFaces in facesofCube:
+        rotateCube += ''.join(str(cubeFaces))
     return {'rotateCube': rotateCube}
     
 def _centerRotation(face = [], direction = ''):
