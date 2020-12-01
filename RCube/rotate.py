@@ -105,7 +105,7 @@ def _frontRotation(facesofCube = [], direction =''):
     
     facesofCube[0] = _centerRotation(facesofCube[0], direction)
     for cubeFace in facesofCube:
-        rotateCube += ''.join(cubeFace)
+        rotateCube += ''.join(str(cubeFace))
     return{'rotateCube': rotateCube}
     
 def _backRotation(facesofCube = [], direction =''):
