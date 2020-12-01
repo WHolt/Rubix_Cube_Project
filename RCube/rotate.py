@@ -4,16 +4,20 @@ import RCube.check as check
 rotations = ['f','F','b','B','r','R', 't','T','u','U']
 
 def _rotate(parms):
-    if(not('cube' in parms)): return {'status': 'error: missing cube key'}
-    if(parms['cube'] == ''): return {'status': 'error: missing cube value'}
-    if(not('integrity' in parms)): return {'status': 'error: missing integrity key'}
+    if(not('cube' in parms)): 
+        return {'status': 'error: missing cube key'}
+    if(parms['cube'] == ''): 
+        return {'status': 'error: missing cube value'}
+    if(not('integrity' in parms)): 
+        return {'status': 'error: missing integrity key'}
     if(not([parms['side'] in rotations])):
             return {'status': 'error: invalid side value'}
    
     cubeIsValid = check._check(parms)
     facesofCube = [parms['cube'][i:i+9] for i in range(0, len(parms['cube']), 9)]
    
-    if('error' in cubeIsValid['status']): return cubeIsValid
+    if('error' in cubeIsValid['status']): 
+        return cubeIsValid
     #Front
     elif (parms['side'] == 'f' or parms['side'] == 'F'):
         rotateCube = _frontRotation(facesofCube, parms['side'])
@@ -40,7 +44,8 @@ def _rotate(parms):
 def _frontRotation(facesofCube = [], direction =''):
     if(len(facesofCube == 0)):
         return {'error': 'missing input'}
-    if(direction == ''): return {'error': 'missing input'}
+    if(direction == ''): 
+        return {'error': 'missing input'}
     rotateCube = ''
     #Make cube lists to manipulate characters
     for face in range(0,6):
