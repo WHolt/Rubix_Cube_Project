@@ -1,7 +1,7 @@
 import hashlib
 import RCube.check as check
 #from test.test_set import faces
-rotations = ['f','F','b','B','r','R', 't','T','u','U']
+rotations = ['f','F','b','B','r','R', 'l', 'L','t','T','u','U']
 
 def _rotate(parms):
     if(not('cube' in parms)): 
