@@ -45,7 +45,7 @@ def _rotate(parms):
         
     cubeBytes = bytes(rotateCube['rotateCube'], 'utf-8')
     integrity = hashlib.sha256(cubeBytes).hexdigest().upper()
-    #return(integrity)
+    print(integrity)
     print(rotateCube['rotateCube'])
     return {'status':'rotated','cube': rotateCube['rotateCube'], 'integrity':integrity}
     
