@@ -75,67 +75,67 @@ class Test(unittest.TestCase):
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest105_RotationValue_F(self):
+    def test505_RotationValue_F(self):
         expected = {'cube': 'oooooooooyggyggyggrrrrrrrrrbbwbbwbbwwwwwwwgggbbbyyyyyy', 'integrity': '0725FE3DE940D22412488858679E49038627A91F615FE641A3CA897B08F14C09', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'F', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest110_RotationValue_r(self):
+    def test510_RotationValue_r(self):
         expected = {'cube': 'ooyooyooygggggggggwrrwrrwrrbbbbbbbbbwwowwowwoyyryyryyr', 'integrity': '84DF9D66A7A22B043BD6B77947DD548ADA1A74091E8F544E31C1DB2B8F4FE5FB', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'r', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest115_RotationValue_R(self):
+    def test515_RotationValue_R(self):
         expected = {'cube': 'oowoowoowgggggggggyrryrryrrbbbbbbbbbrwwrwwrwwyyoyyoyyo', 'integrity': '112609867666974AACB5AF5F7FBCB3313AF5F8C9C0FEAA4A265089B692132F0B', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'R', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest120_RotationValue_b(self):
+    def test520_RotationValue_b(self):
         expected = {'cube': 'oooooooooggyggyggyrrrrrrrrrwbbwbbwbbgggwwwwwwyyyyyybbb', 'integrity': 'CF7F7CA7F091782686E19721F50C78B9D46408A00A992E414D8B2D33C999D9B9', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'b', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest125_RotationValue_B(self):
+    def test525_RotationValue_B(self):
         expected = {'cube': 'oooooooooggbggbggbrrrrrrrrrybbybbybbwwwwwwwwwyyyyyyggg', 'integrity': '89FED513C0F40F3AFFAB4A0C8B9E3D23A780C354AF5D2967D3C8ADA384D21BBE', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'B', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
 
-    def unittest130_RotationValue_l(self):
+    def test530_RotationValue_l(self):
         expected = {'cube': 'woowoowoogggggggggrryrryrrybbbbbbbbbrwwrwwrwwoyyoyyoyy', 'integrity': '50FAFE62BF3BB0CF259572E7992AC528A4DFEE0BEB8B0F4EAC768E68262262D1', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'l', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest135_RotationValue_L(self):
+    def test535_RotationValue_L(self):
         expected = {'cube': 'yooyooyoogggggggggrrwrrwrrwbbbbbbbbbowwowwowwryyryyryy', 'integrity': 'C323A402B51C4594101DB8EF9DD2808100987459684AB6C7B433D4A54D3DD605', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'L', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest140_RotationValue_t(self):
+    def test540_RotationValue_t(self):
         expected = {'cube': 'gggoooooorrrggggggbbbrrrrrrooobbbbbbwwwwwwwwwyyyyyyyyy', 'integrity': 'E03151E1977723626C4896A60618759D4821F62EAF753955D97B8B70DDA2DE0B', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 't', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest145_RotationValue_T(self):
+    def test545_RotationValue_T(self):
         expected = {'cube': 'bbbooooooooogggggggggrrrrrrrrrbbbbbbwwwwwwwwwyyyyyyyyy', 'integrity': 'F60549B12BC9C64FD37F15DD1CE16E16712AFC0181A84EA3898F070EBB29C60E', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'T', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest150_RotationValue_u(self):
+    def test550_RotationValue_u(self):
         expected = {'cube': 'oooooobbbggggggooorrrrrrrrrbbbbbbrrrwwwwwwwwwyyyyyyyyy', 'integrity': 'B67C93781FD3959F10A958E403A441E50071A8ECE6E8FBA6B9BC2F23183F9663', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'u', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
         self.assertEqual(expected, actual)
     
-    def unittest155_RotationValue_U(self):
+    def test555_RotationValue_U(self):
         expected = {'cube': 'ooooooggggggggggggrrrrrrbbbbbbbbbooowwwwwwwwwyyyyyyyyy', 'integrity': '2823610D1C54F7CCED00BE519197FD44D4766CA44C96F6EC2B6404675DCC747D', 'status': 'rotated'}
         parms = {'op': 'rotate', 'cube': 'ooooooooogggggggggrrrrrrrrrbbbbbbbbbwwwwwwwwwyyyyyyyyy', 'side': 'U', 'integrity': '26BF4FF19CDC0D418DF7317E5F8EEF32C21C5B8CBDA492BDC1BF536F34421116'}
         actual = rotate._rotate(parms)
