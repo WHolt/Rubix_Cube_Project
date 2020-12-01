@@ -11,17 +11,17 @@ class Test(unittest.TestCase):
 
 #Happy path
     def test100_010_RotateRandomCube(self):
-        expectedResult = {'status':'rotated','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
+        expectedResult = {'status':'rotated','cube': 'oggoggoggyggyrryrrrrrbbbbbbbbwoowoowwwwwwwgrrbooyyyyyy', 'integrity': '28DB9AFFF99873020CFE0315DF48F726CC758A35A403D75E28CDDE2ED297AF7A'}
         parms = {'op': 'rotate', 'side':'F','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': 'C2541978094B8FF38D7F143F1E3608F90565CF6501215D597E7E3DDD5D4F65B4'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_020_RotateFullCube(self):
-        expectedResult = {'status':'rotated', 'cube': 'gggggggggwrrwrrwrrbbbbbbbbbooyooyooywwwwwwooorrryyyyyy', 'integrity': '0F3BDBE402C16D85756959CDEE1649281296A8507CDDF29EC328C72CC758DA28'}
+        expectedResult = {'status':'rotated', 'cube': 'ggoggoggowggwrrwrrrrrbbbbbbbbyooyooywwwwwwboogrryyyyyy', 'integrity': 'B66B9AF84D6C2C52B5CA005F981E3FC92E9EA78DDB815904769186F1752282C'}
         parms = {'op': 'rotate', 'side':'f','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': 'C2541978094B8FF38D7F143F1E3608F90565CF6501215D597E7E3DDD5D4F65B4'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
     def test100_030_ExtraParms(self):
-        expectedResult = {'status':'rotated','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': '88D897BD22E132D21A538745E63995B07D7C52CE9617A0979520545753EE0DED'}
+        expectedResult = {'status':'rotated','cube': 'oooggggggggyrryrrybbrbbrbbrwbbwoowoogrrwwwwwwyyyyyyboo', 'integrity': '8A799EC6B4599B137ABA4AB532541DC46004CFB90DF9FDCA026D4ECDFB5EF48F'}
         parms = {'op': 'rotate', 'side':'b','cube': 'ooogggggggggrrrrrrrrrbbbbbbbbboooooowwwwwwwwwyyyyyyyyy', 'integrity': 'C2541978094B8FF38D7F143F1E3608F90565CF6501215D597E7E3DDD5D4F65B4'}
         actualResult = rotate._rotate(parms)
         self.assertDictEqual(expectedResult, actualResult)
