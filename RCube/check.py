@@ -29,6 +29,7 @@ def _check(parms):
     #Check integrity
     bytestring = bytes(parms['cube'], 'utf-8')
     integrity = hashlib.sha256(bytestring).hexdigest().upper()
+    print(integrity)
     if not(parms['integrity'] == integrity):
         result['status'] = 'error: Wrong Integrity Value'
         return result
