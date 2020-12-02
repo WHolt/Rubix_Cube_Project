@@ -279,7 +279,7 @@ def _rightRotation(facesofCube = [], direction =''):
         index = 0
         for cubeFace in right:
             facesofCube[4][index] = cubeFace
-            index += 1 #Get indices 0,1 and 2 
+            index += 3 #Get indices 0,1 and 2 
     
     facesofCube[1] = _centerRotation(facesofCube[1], direction)
     for cubeFace in facesofCube:
