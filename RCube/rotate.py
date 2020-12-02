@@ -155,11 +155,11 @@ def _backRotation(facesofCube = [], direction =''):
             facesofCube[5][index] = cubeFace
             index += 1 #Get indices 6,7 and 8
         index = 2
-        for cubeFace in right:
+        for cubeFace in top:
             facesofCube[1][index] = cubeFace
             index += 3 #Get indices 0,1 and 2
         index = 0
-        for cubeFace in top:
+        for cubeFace in right:
             facesofCube[4][index] = cubeFace
             index += 1 #Get indices 2,5 and 8 
     
